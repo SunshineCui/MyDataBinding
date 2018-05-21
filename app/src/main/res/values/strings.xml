@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="item_mine_head_name">姓名</string>
+    <string name="item_mine_head_post">岗位</string>
+    <string name="item_mine_head_sign">签名</string>
+    <string name="item_mine_head_workSpace">工作地点</string>
+</resources>

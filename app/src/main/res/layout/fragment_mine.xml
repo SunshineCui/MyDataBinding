@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.example.f.myapplication.model.User" />
+
+
+        <import type="com.example.f.myapplication.model.ItemMineCommon" />
+
+        <variable
+            name="common_0"
+            type="ItemMineCommon" />
+
+        <variable
+            name="common_1"
+            type="ItemMineCommon" />
+
+        <variable
+            name="common_2"
+            type="ItemMineCommon" />
+
+        <variable
+            name="common_3"
+            type="ItemMineCommon" />
+
+        <variable
+            name="common_4"
+            type="ItemMineCommon" />
+
+        <variable
+            name="common_5"
+            type="ItemMineCommon" />
+
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="switchClick"
+            type="android.widget.CompoundButton.OnCheckedChangeListener"/>
+
+        <variable
+            name="workList"
+            type="java.util.List&lt;String>"
+            />
+    </data>
+
+    <com.google.android.flexbox.FlexboxLayout xmlns:bind="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EEEEEE"
+        app:alignContent="stretch"
+        app:alignItems="stretch"
+        app:flexDirection="column"
+        app:flexWrap="wrap">
+
+        <!--标题栏-->
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="#005AAE">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的"
+                android:textColor="#FFFFFF"
+                android:textSize="17dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginRight="28dp"
+                android:src="@mipmap/set"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <!--我的 头布局-->
+        <include
+            android:id="@+id/item_mine_head"
+            layout="@layout/item_mine_head"
+            android:layout_width="match_parent"
+            android:layout_height="74dp"
+            bind:onClick="@{onClick}"
+            bind:workList="@{workList}"
+            bind:user="@{user}" />
+
+        <!--计时功能-->
+        <include
+            android:id="@+id/item_mine_common_0"
+            style="@style/item_mine_common"
+            layout="@layout/item_mine_common"
+            android:layout_marginTop="6dp"
+            bind:common="@{common_0}"
+            bind:onClick="@{onClick}" />
+
+        <!--分割线-->
+        <View style="@style/item_mine_cuttingLine" />
+
+        <!--体温测试-->
+        <include
+            bind:switchClick="@{switchClick}"
+            android:id="@+id/item_mine_common_1"
+            style="@style/item_mine_common"
+            layout="@layout/item_mine_common"
+            bind:common="@{common_1}"
+            bind:onClick="@{onClick}" />
+
+
+        <!--只显示我的患者-->
+        <include
+            android:id="@+id/item_mine_common_2"
+            style="@style/item_mine_common"
+            layout="@layout/item_mine_common"
+
+            android:layout_marginTop="6dp"
+            bind:common="@{common_2}"
+            bind:switchClick="@{switchClick}" />
+
+        <!--分割线-->
+        <View style="@style/item_mine_cuttingLine" />
+
+        <!--医嘱通知-->
+        <include
+            android:id="@+id/item_mine_common_3"
+            style="@style/item_mine_common"
+            layout="@layout/item_mine_common"
+
+            bind:common="@{common_3}"
+            bind:switchClick="@{switchClick }"/>
+
+
+        <!--我的排班-->
+        <include
+            android:id="@+id/item_mine_common_4"
+            style="@style/item_mine_common"
+            android:layout_marginTop="6dp"
+            layout="@layout/item_mine_common"
+            bind:common="@{common_4}"
+            bind:onClick="@{onClick}" />
+
+        <!--分割线-->
+        <View style="@style/item_mine_cuttingLine" />
+
+        <!--请假-->
+        <include
+            android:id="@+id/item_mine_common_5"
+            style="@style/item_mine_common"
+            layout="@layout/item_mine_common"
+            bind:common="@{common_5}"
+            bind:onClick="@{onClick}" />
+
+
+    </com.google.android.flexbox.FlexboxLayout>
+</layout>

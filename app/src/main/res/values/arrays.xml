@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="workSpaceList">
+        <item>妇产病房</item>
+        <item>内科</item>
+        <item>儿科</item>
+    </string-array>
+
+</resources>

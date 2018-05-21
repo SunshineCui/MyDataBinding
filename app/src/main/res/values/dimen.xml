@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="switch_radius">20dp</dimen>
+    <!--轨迹高度-->
+    <dimen name="switch_track_height">10dp</dimen>
+    <!--翻阅高度-->
+    <dimen name="switch_thumb_height">24dp</dimen>
+</resources>

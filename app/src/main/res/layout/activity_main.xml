@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.example.f.myapplication.model.User" />
+
+        <variable
+            name="mclick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <com.google.android.flexbox.FlexboxLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:bind="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:flexDirection="column_reverse"
+        >
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:justifyContent="space_around"
+            app:layout_flexShrink="0"
+            >
+
+            <ImageView
+                android:id="@+id/iv_title_one"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/titlebar_music" />
+
+            <ImageView
+                android:id="@+id/iv_title_two"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/titlebar_disco" />
+
+            <ImageView
+                android:id="@+id/iv_title_three"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/titlebar_friends" />
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:descendantFocusability="blocksDescendants"/>
+
+
+    </com.google.android.flexbox.FlexboxLayout>
+</layout>

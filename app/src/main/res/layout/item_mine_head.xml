@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.example.f.myapplication.model.User" />
+
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener" />
+        
+        <variable
+            name="workList"
+            type="java.util.List&lt;String>"
+            />
+
+    </data>
+
+    <com.google.android.flexbox.FlexboxLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="#F7F7F7"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        app:flexWrap="wrap"
+
+        >
+
+
+        <com.example.f.myapplication.view.CircleImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="14dp"
+            android:src="@mipmap/christmas"
+             />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_marginLeft="6dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="74dp"
+            android:onClick="@{onClick}"
+
+            >
+
+            <TextView
+                android:id="@+id/textView"
+                android:text="@{user.name}"
+                style="@style/item_mine_head_text"
+                 />
+
+            <TextView
+                android:id="@+id/textView1"
+                style="@style/item_mine_head_text"
+                android:text="@{user.post}"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                />
+
+            <!--<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginStart="26dp"
+                android:gravity="center"
+                android:text="@{user.workSpace}"
+                android:textSize="14dp"
+                android:textColor="#424242"
+                app:layout_constraintStart_toEndOf="@id/textView1"
+                 />-->
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/item_mine_head_acs"
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                android:spinnerMode="dropdown"
+                app:layout_constraintStart_toEndOf="@id/textView1"
+                android:layout_marginStart="26dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                android:textSize="14dp"
+                android:textColor="#4A4A4A"
+                android:gravity="center"
+                android:text="@{user.sign}"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                tools:layout_editor_absoluteX="0dp" />
+
+        </android.support.constraint.ConstraintLayout>
+    </com.google.android.flexbox.FlexboxLayout>
+</layout>
