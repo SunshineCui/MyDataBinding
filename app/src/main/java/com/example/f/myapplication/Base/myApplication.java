@@ -15,11 +15,13 @@ public class myApplication extends Application {
 
     private RefWatcher refWatcher;
 
+    private static myApplication sMyApplication;
+
     @Override
     public void onCreate() {
         super.onCreate();
         setupLeakCanary();
-
+        sMyApplication = this;
     }
 
     protected void setupLeakCanary() {
@@ -43,6 +45,10 @@ public class myApplication extends Application {
     public static RefWatcher getRefWatcher(Context context) {
         myApplication application = (myApplication) context.getApplicationContext();
         return application.refWatcher;
+    }
+
+    public static Context getContext(){
+        return sMyApplication;
     }
 
 }

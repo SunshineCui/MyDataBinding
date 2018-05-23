@@ -104,7 +104,7 @@
             style="@style/item_mine_common"
             layout="@layout/item_mine_common"
             android:layout_marginTop="6dp"
-            bind:common="@{common0}"
+            bind:common="@{common_0}"
             bind:onClick="@{onClick}" />
 
         <!--分割线-->

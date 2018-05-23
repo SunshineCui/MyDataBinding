@@ -48,12 +48,12 @@ public class MineActivity extends AppCompatActivity implements IView, View.OnCli
         user = new User("李西坜", "护士长", "一二三四五六七八九十", "妇产科病区");
         binding.setUser(user);
         itemMineCommon = new ItemMineCommon(new ColorDrawable(0xff17bf8d), "计时功能", "00:00.00", false);
-        binding.setCommon_0(itemMineCommon);
-        binding.setCommon_1(new ItemMineCommon(new ColorDrawable(0xffff9800), "体温测试", null, false));
-        binding.setCommon_2(new ItemMineCommon(new ColorDrawable(0xfff54d42), "只显示我的患者", null, true));
-        binding.setCommon_3(new ItemMineCommon(new ColorDrawable(0xff2783d9), "医嘱通知", null, true));
-        binding.setCommon_4(new ItemMineCommon(new ColorDrawable(0xfff54d42), "我的排班", null, false));
-        binding.setCommon_5(new ItemMineCommon(new ColorDrawable(0xff2783d9), "请假", null, false));
+//        binding.setCommon_0(itemMineCommon);
+//        binding.setCommon_1(new ItemMineCommon(new ColorDrawable(0xffff9800), "体温测试", null, false));
+//        binding.setCommon_2(new ItemMineCommon(new ColorDrawable(0xfff54d42), "只显示我的患者", null, true));
+//        binding.setCommon_3(new ItemMineCommon(new ColorDrawable(0xff2783d9), "医嘱通知", null, true));
+//        binding.setCommon_4(new ItemMineCommon(new ColorDrawable(0xfff54d42), "我的排班", null, false));
+//        binding.setCommon_5(new ItemMineCommon(new ColorDrawable(0xff2783d9), "请假", null, false));
 
         binding.setOnClick(this);
         binding.setSwitchClick(this);
@@ -120,7 +120,8 @@ public class MineActivity extends AppCompatActivity implements IView, View.OnCli
                 break;
             case R.id.title_iv:
                 Intent intent = new Intent();
-                intent.setClass(getApplicationContext(),MainActivity.class);
+//                intent.setClass(getApplicationContext(),MainActivity.class);
+                intent.setClass(getApplicationContext(),DownloadActivity.class);
                 startActivity(intent);
                 break;
             default:
